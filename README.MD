@@ -11,7 +11,7 @@ O projeto parte de uma implementação CRUD simples e será evoluído progressiv
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Este repositório faz parte da minha jornada de estudos e evolução no ecossistema Java/Spring. 
 
@@ -30,7 +30,7 @@ O objetivo principal não é apenas construir uma API funcional, mas **compreend
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Linguagem:** Java
 - **Framework Principal:** Spring Boot (Spring Web, Spring Data JPA)
@@ -43,7 +43,7 @@ O objetivo principal não é apenas construir uma API funcional, mas **compreend
 
 ---
 
-## 🏗️ Arquitetura e Fluxo de Dados
+## Arquitetura e Fluxo de Dados
 
 A API utiliza uma separação rigorosa de responsabilidades. Para garantir o desacoplamento e proteger a camada de persistência, utilizam-se **DTOs de Entrada (Request DTO)** e **DTOs de Saída (Response DTO)**, evitando a exposição direta das entidades persistidas.
 
@@ -86,7 +86,7 @@ A API utiliza uma separação rigorosa de responsabilidades. Para garantir o des
 
 ---
 
-## ✨ Funcionalidades Atuais
+## Funcionalidades Atuais
 
 - [x] Criação de pagamentos
 - [x] Listagem geral de pagamentos
@@ -100,9 +100,9 @@ A API utiliza uma separação rigorosa de responsabilidades. Para garantir o des
 
 ---
 
-## 🌐 Endpoints Atuais
+## Endpoints Atuais
 
-> ⚠️ **Nota:** Os endpoints atuais estão na versão inicial e serão refatorados durante os estudos de *resource naming* e *API versioning*.
+> **Nota:** Os endpoints atuais estão na versão inicial e serão refatorados durante os estudos de *resource naming* e *API versioning*.
 
 | Método | Endpoint | Descrição |
 | :--- | :--- | :--- |
@@ -114,7 +114,7 @@ A API utiliza uma separação rigorosa de responsabilidades. Para garantir o des
 
 ---
 
-## 🗺️️ Roadmap de Evolução
+## Roadmap de Evolução
 
 A evolução do projeto é feita de forma incremental para consolidar o aprendizado de cada conceito:
 
@@ -137,25 +137,25 @@ A evolução do projeto é feita de forma incremental para consolidar o aprendiz
 
 ---
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```text
 src/main/java
 └── com.viniciusstoc.paymentapispring
-    ├── paymentController
+    ├── paymentcontroller
     ├── paymentDTO
     │   ├── request
     │   └── response
-    ├── paymentEntity
-    ├── paymentRepository
-    ├── paymentService
-    └── paymentUtils
+    ├── paymententity
+    ├── paymentrepository
+    ├── paymentservice
+    └── paymentutils
 ```
 
 ---
 
-## 📌 Status do Projeto
+## Status do Projeto
 
-🚧 **Em desenvolvimento ativo.** 
+ **Em desenvolvimento ativo.** 
 
-As funcionalidades são adicionadas passo a passo com foco no entendimento técnico e nas decisões de design de software, evitando a simples cópia de soluções prontas.
+As funcionalidades são adicionadas passo a passo com foco no entendimento técnico e nas decisões de design de software, evitando a simples cópia de soluções pronta
