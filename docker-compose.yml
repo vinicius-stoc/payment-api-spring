@@ -1,0 +1,47 @@
+
+services:
+  # Serviço do Banco de Dados PostgreSQL
+  postgres-payment-db:
+    image: postgres:16-alpine
+    container_name: postgres-payment-db
+    environment:
+      POSTGRES_USER: payment_user
+      POSTGRES_PASSWORD: payment_password
+      POSTGRES_DB: payment_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - payment-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U payment_user -d payment_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+
+   # aplicação Spring Boot
+  springboot-app:
+    build: .
+    container_name: Payment-API-Spring
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-payment-db:5432/payment_db
+      - SPRING_DATASOURCE_USERNAME=payment_user
+      - SPRING_DATASOURCE_PASSWORD=payment_password
+
+    depends_on:
+      postgres-payment-db:
+        condition: service_healthy
+    networks:
+      - payment-network
+
+volumes:
+  postgres_data:
+
+networks:
+  payment-network:
+    driver: bridge
